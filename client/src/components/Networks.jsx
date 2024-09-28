@@ -117,16 +117,16 @@ import './Networks.css';
 function Networks() {
   const navigate = useNavigate(); // useNavigate for redirecting
 
-  const handleConnect = (platform) => {
-    if (platform === 'Facebook') {
-      // Redirect to your backend's Facebook authentication route
-      window.location.href = 'http://localhost:3001/auth/facebook'; // Make sure this route exists in your backend
-    } else {
-      // Handle other platforms here (e.g., Instagram, Twitter)
-      console.log(`Connect with ${platform}`);
-      // You can add similar redirect logic for Instagram and Twitter if needed
-    }
-  };
+  // const handleConnect = (platform) => {
+  //   if (platform === 'Facebook') {
+  //     // Redirect to your backend's Facebook authentication route
+  //     window.location.href = 'http://localhost:3001/auth/facebook'; // Make sure this route exists in your backend
+  //   } else {
+  //     // Handle other platforms here (e.g., Instagram, Twitter)
+  //     console.log(`Connect with ${platform}`);
+  //     // You can add similar redirect logic for Instagram and Twitter if needed
+  //   }
+  // };
 
   return (
     <div>
@@ -149,7 +149,7 @@ function Networks() {
         {/* Facebook */}
         <div className="platform">
           <span>Facebook</span>
-          <button className="connect-button" onClick={() => handleConnect('Facebook')}>
+          <button className="connect-button" > 
             Connect
           </button>
         </div>
@@ -157,7 +157,7 @@ function Networks() {
         {/* Instagram */}
         <div className="platform">
           <span>Instagram</span>
-          <button className="connect-button" onClick={() => handleConnect('Instagram')}>
+          <button className="connect-button" >
             Connect
           </button>
         </div>
@@ -165,7 +165,7 @@ function Networks() {
         {/* Twitter */}
         <div className="platform">
           <span>Twitter</span>
-          <button className="connect-button" onClick={() => handleConnect('Twitter')}>
+          <button className="connect-button" >
             Connect
           </button>
         </div>

@@ -61,43 +61,43 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
+// const passport = require('passport');
+// const FacebookStrategy = require('passport-facebook').Strategy;
 const UserModel = require('./models/Users');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 mongoose.connect('mongodb://localhost:27017/socio');
 
 // Configure the Facebook strategy for use by Passport
-passport.use(new FacebookStrategy({
-    clientID: '996033582270106', // Your App ID
-    clientSecret: 'f80dcc9933f8d877970b3e34be9c442a', // Your App Secret
-    callbackURL: 'http://localhost:3001/auth/facebook/callback', // Your redirect URI
-    profileFields: ['id', 'displayName', 'photos', 'email'] // Specify fields to return
-  },
-  function(accessToken, refreshToken, profile, done) {
-    // Here, you can save the user's profile information to the database
-    // For now, we just log it
-    console.log('Facebook Profile:', profile);
-    return done(null, profile);
-  }
-));
+// passport.use(new FacebookStrategy({
+//     clientID: '996033582270106', // Your App ID
+//     clientSecret: 'f80dcc9933f8d877970b3e34be9c442a', // Your App Secret
+//     callbackURL: 'http://localhost:3001/auth/facebook/callback', // Your redirect URI
+//     profileFields: ['id', 'displayName', 'photos', 'email'] // Specify fields to return
+//   },
+//   function(accessToken, refreshToken, profile, done) {
+//     // Here, you can save the user's profile information to the database
+//     // For now, we just log it
+//     console.log('Facebook Profile:', profile);
+//     return done(null, profile);
+//   }
+// ));
 
-// Auth route for Facebook
-app.get('/auth/facebook', passport.authenticate('facebook'));
+// // Auth route for Facebook
+// app.get('/auth/facebook', passport.authenticate('facebook'));
 
 // Callback route for Facebook
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }),
-  function(req, res) {
-    // Successful authentication, redirect home or to another route
-    res.redirect('/'); // Change this to the route you want to redirect to after login
-  }
-);
+// app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home or to another route
+//     res.redirect('/'); // Change this to the route you want to redirect to after login
+//   }
+// );
 
 // Set up multer for image uploads
 const storage = multer.diskStorage({

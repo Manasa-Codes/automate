@@ -1,0 +1,71 @@
+body {
+  background-color: #72aae6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-logo {
+  font-size: 24px;
+}
+
+.navbar-menu {
+  list-style: none;
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #777;
+}
+
+.platforms-container {
+  padding: 20px;
+}
+
+.platforms-container h2 {
+  font-size: 26px;  /* Increase the heading font size */
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Ensure buttons and text are aligned correctly */
+  margin: 20px 0;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.platform label {
+  font-size: 20px;  /* Increase font size for platform names */
+}
+
+.connect-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;  /* Increase padding for the button */
+  border: none;
+  cursor: pointer;
+  font-size: 18px;  /* Increase font size for button */
+}
+
+.connect-button:hover {
+  background-color: #0056b3;
+}
+
